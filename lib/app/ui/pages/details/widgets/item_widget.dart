@@ -14,7 +14,7 @@ class ItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(label,
+        Text("$label:",
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
         const SizedBox(width: 12),
         Text(

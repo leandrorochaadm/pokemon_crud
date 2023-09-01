@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pokemon/app/domain/enties/enties.dart';
 import 'package:pokemon/app/ui/pages/details/detail_presenter.dart';
 
+import 'widgets/widgets.dart';
+
 class DetailPage extends StatefulWidget {
   final DetailPresenter presenter;
   const DetailPage({Key? key, required this.presenter}) : super(key: key);
@@ -32,8 +34,37 @@ class _DetailPageState extends State<DetailPage> {
         valueListenable: widget.presenter.detail,
         builder: (_, detail, __) {
           return Scaffold(
-            appBar: AppBar(
-              title: Text('Detalhe do ${detail.name}'),
+            appBar: AppBar(title: Text('Detalhe do ${detail.name ?? ''}')),
+            body: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                children: [
+                  ItemWidget(label: 'Name', description: detail.name),
+                  const SizedBox(height: 8),
+                  ItemWidget(label: 'Espécie', description: detail.species),
+                  const SizedBox(height: 8),
+                  ItemWidget(
+                    label: 'Altura',
+                    description: detail.height.toString(),
+                  ),
+                  const SizedBox(height: 8),
+                  ItemWidget(
+                    label: 'Peso',
+                    description: detail.weight.toString(),
+                  ),
+                  const SizedBox(height: 8),
+                  ItemWidget(
+                    label: 'Experiência base',
+                    description: detail.baseExperience.toString(),
+                  ),
+                  const SizedBox(height: 8),
+                  ItemWidget(
+                    label: 'Ordem',
+                    description: detail.order.toString(),
+                  ),
+                  const SizedBox(height: 8),
+                ],
+              ),
             ),
           );
         });

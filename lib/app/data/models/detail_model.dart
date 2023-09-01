@@ -40,7 +40,7 @@ class DetailModel extends DetailEntity with EquatableMixin {
       order: json['order'] ?? 0,
       species: json['species']['name'] ?? '',
       types: types,
-      weight: json['weight'] ?? 0,
+      weight: json['order'] ?? 0,
     );
   }
 }
