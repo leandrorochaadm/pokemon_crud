@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class DetailsEntity extends Equatable {
+class DetailEntity extends Equatable {
   List<String> abilities;
   int baseExperience;
   List<String> forms;
@@ -13,7 +13,7 @@ class DetailsEntity extends Equatable {
   int weight;
   String species;
 
-  DetailsEntity({
+  DetailEntity({
     required this.abilities,
     required this.baseExperience,
     required this.forms,

@@ -2,8 +2,8 @@ import 'package:equatable/equatable.dart';
 
 import '../../domain/enties/enties.dart';
 
-class DetailsModel extends DetailsEntity with EquatableMixin {
-  DetailsModel({
+class DetailModel extends DetailEntity with EquatableMixin {
+  DetailModel({
     required super.abilities,
     required super.baseExperience,
     required super.forms,
@@ -17,7 +17,7 @@ class DetailsModel extends DetailsEntity with EquatableMixin {
     required super.weight,
   });
 
-  factory DetailsModel.fromJson(dynamic json) {
+  factory DetailModel.fromJson(dynamic json) {
     List<String> abilities = [];
     final List<dynamic> abilitiesJson = json['abilities'];
     for (var abilityJson in abilitiesJson) {
@@ -29,7 +29,7 @@ class DetailsModel extends DetailsEntity with EquatableMixin {
     List<String> moves = [];
     List<String> types = [];
 
-    return DetailsModel(
+    return DetailModel(
       abilities: abilities,
       baseExperience: int.parse(json['baseExperience'] ?? 0),
       forms: forms,
