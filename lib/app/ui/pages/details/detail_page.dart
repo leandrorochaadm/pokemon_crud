@@ -33,6 +33,9 @@ class _DetailPageState extends State<DetailPage> {
     return ValueListenableBuilder<DetailEntity>(
         valueListenable: widget.presenter.detail,
         builder: (_, detail, __) {
+          if (detail.name == '') {
+            return const LoadingWidget();
+          }
           return Scaffold(
             appBar: AppBar(title: Text('Detalhe do ${detail.name ?? ''}')),
             body: Padding(
