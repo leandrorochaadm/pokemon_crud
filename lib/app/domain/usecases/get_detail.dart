@@ -1,5 +1,5 @@
 import '../enties/enties.dart';
 
 abstract class GetDetail {
-  Future<DetailEntity> call();
+  Future<DetailEntity> call({required String pokemonId});
 }

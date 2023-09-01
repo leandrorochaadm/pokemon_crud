@@ -25,7 +25,7 @@ class ValueNotifierDetailPresenter implements DetailPresenter {
   }
 
   @override
-  Future<void> loadDetail() async {
-    detail.value = await getDetail();
+  Future<void> loadDetail({required String pokemonId}) async {
+    detail.value = await getDetail(pokemonId: pokemonId);
   }
 }

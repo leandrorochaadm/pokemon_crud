@@ -11,5 +11,5 @@ abstract class DetailPresenter extends BasePresenter {
 
   DetailPresenter({required this.getDetail});
 
-  Future<void> loadDetail();
+  Future<void> loadDetail({required String pokemonId});
 }

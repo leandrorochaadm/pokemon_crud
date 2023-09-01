@@ -11,9 +11,9 @@ class PokeapiGetDetail implements GetDetail {
   PokeapiGetDetail({required this.dio, required this.baseUrl});
 
   @override
-  Future<DetailEntity> call() async {
+  Future<DetailEntity> call({required String pokemonId}) async {
     try {
-      final res = await dio.get("$baseUrl/pokemon");
+      final res = await dio.get("$baseUrl/pokemon/$pokemonId");
       final detail = DetailModel.fromJson(res.data);
       return detail;
     } catch (e) {

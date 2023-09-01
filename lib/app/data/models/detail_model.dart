@@ -21,7 +21,7 @@ class DetailModel extends DetailEntity with EquatableMixin {
     List<String> abilities = [];
     final List<dynamic> abilitiesJson = json['abilities'];
     for (var abilityJson in abilitiesJson) {
-      final abilityName = abilityJson['name'];
+      final abilityName = abilityJson['ability']['name'];
       abilities.add(abilityName);
     }
 
@@ -31,16 +31,16 @@ class DetailModel extends DetailEntity with EquatableMixin {
 
     return DetailModel(
       abilities: abilities,
-      baseExperience: int.parse(json['baseExperience'] ?? 0),
+      baseExperience: json['base_experience'] ?? 0,
       forms: forms,
-      height: int.parse(json['height'] ?? 0),
-      id: int.parse(json['id'] ?? 0),
+      height: json['height'] ?? 0,
+      id: json['id'] ?? 0,
       moves: moves,
       name: json['name'] ?? '',
-      order: int.parse(json['order'] ?? 0),
-      species: json['species'],
+      order: json['order'] ?? 0,
+      species: json['species']['name'] ?? '',
       types: types,
-      weight: int.parse(json['weight'] ?? 0),
+      weight: json['weight'] ?? 0,
     );
   }
 }
