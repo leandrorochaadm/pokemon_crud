@@ -16,13 +16,12 @@ class _DetailPageState extends State<DetailPage> {
   @override
   void initState() {
     widget.presenter.init();
-    // widget.presenter.loadDetail();
     super.initState();
   }
 
   @override
   void dispose() {
-    // widget.presenter.dispose();
+    widget.presenter.dispose();
     super.dispose();
   }
 
@@ -44,7 +43,8 @@ class _DetailPageState extends State<DetailPage> {
                 children: [
                   ItemWidget(label: 'Name', description: detail.name),
                   const SizedBox(height: 8),
-                  ItemWidget(label: 'Espécie', description: detail.species),
+                  ItemWidget(
+                      label: 'Código', description: detail.id.toString()),
                   const SizedBox(height: 8),
                   ItemWidget(
                     label: 'Altura',

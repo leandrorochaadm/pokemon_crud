@@ -13,19 +13,19 @@ class PokemonsPage extends StatefulWidget {
 class _PokemonsPageState extends State<PokemonsPage> {
   @override
   void initState() {
-    // widget.presenter.init();
-    widget.presenter.loadPokemons();
+    widget.presenter.init();
     super.initState();
   }
 
   @override
   void dispose() {
-    // widget.presenter.dispose();
+    widget.presenter.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    widget.presenter.loadPokemons();
     return Scaffold(
       appBar: AppBar(
         title: GestureDetector(
