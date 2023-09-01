@@ -6,7 +6,9 @@ import 'widgets/widgets.dart';
 
 class DetailPage extends StatefulWidget {
   final DetailPresenter presenter;
-  const DetailPage({Key? key, required this.presenter}) : super(key: key);
+  final String pokemonId;
+  const DetailPage({Key? key, required this.presenter, required this.pokemonId})
+      : super(key: key);
 
   @override
   State<DetailPage> createState() => _DetailPageState();
@@ -27,8 +29,7 @@ class _DetailPageState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    // final pokemonId = ModalRoute.of(context)!.settings.arguments as String;
-    widget.presenter.loadDetail(pokemonId: '1');
+    widget.presenter.loadDetail(pokemonId: widget.pokemonId);
     return ValueListenableBuilder<DetailEntity>(
         valueListenable: widget.presenter.detail,
         builder: (_, detail, __) {

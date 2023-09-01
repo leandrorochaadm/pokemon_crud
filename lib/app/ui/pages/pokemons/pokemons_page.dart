@@ -58,7 +58,8 @@ class _PokemonsPageState extends State<PokemonsPage> {
                   trailing: const Icon(Icons.arrow_forward_ios_sharp),
                   onTap: () => Navigator.push(
                     context,
-                    ScaleRoute(page: MakeDetailPage()),
+                    ScaleRoute(
+                        page: MakeDetailPage(pokemonId: pokemon.number ?? '0')),
                   ),
                 );
               },
