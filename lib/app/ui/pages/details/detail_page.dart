@@ -25,6 +25,11 @@ class _DetailPageState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final pokemonId = ModalRoute.of(context)!.settings.arguments;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Detalhe do $pokemonId'),
+      ),
+    );
   }
 }

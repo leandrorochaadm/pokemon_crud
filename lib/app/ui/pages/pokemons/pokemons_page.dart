@@ -53,6 +53,11 @@ class _PokemonsPageState extends State<PokemonsPage> {
                     style: const TextStyle(color: Colors.black),
                   ),
                   trailing: const Icon(Icons.arrow_forward_ios_sharp),
+                  onTap: () => Navigator.pushNamed(
+                    context,
+                    '/detail',
+                    arguments: pokemon.number,
+                  ),
                 );
               },
             );
