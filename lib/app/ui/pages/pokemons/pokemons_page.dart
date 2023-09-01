@@ -28,7 +28,10 @@ class _PokemonsPageState extends State<PokemonsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pokemons'),
+        title: GestureDetector(
+          child: const Text('Pokemons'),
+          onTap: () => widget.presenter.loadPokemons(),
+        ),
         centerTitle: true,
       ),
       body: ValueListenableBuilder<List<PokemonEntity>>(
@@ -49,7 +52,7 @@ class _PokemonsPageState extends State<PokemonsPage> {
                     "Número: ${pokemon.number}",
                     style: const TextStyle(color: Colors.black),
                   ),
-                  trailing: const Icon(Icons.add),
+                  trailing: const Icon(Icons.arrow_forward_ios_sharp),
                 );
               },
             );
