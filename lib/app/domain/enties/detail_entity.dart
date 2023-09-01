@@ -1,19 +1,19 @@
 import 'package:equatable/equatable.dart';
 
 class DetailEntity extends Equatable {
-  List<String> abilities;
-  int baseExperience;
-  List<String> forms;
-  int height;
-  int id;
-  List<String> moves;
-  String name;
-  int order;
-  List<String> types;
-  int weight;
-  String species;
+  final List<String> abilities;
+  final int baseExperience;
+  final List<String> forms;
+  final int height;
+  final int id;
+  final List<String> moves;
+  final String name;
+  final int order;
+  final List<String> types;
+  final int weight;
+  final String species;
 
-  DetailEntity({
+  const DetailEntity({
     required this.abilities,
     required this.baseExperience,
     required this.forms,
@@ -26,6 +26,19 @@ class DetailEntity extends Equatable {
     required this.types,
     required this.weight,
   });
+
+  const DetailEntity.empty()
+      : abilities = const [],
+        weight = 0,
+        types = const [],
+        species = '',
+        order = 0,
+        name = '',
+        moves = const [],
+        height = 0,
+        baseExperience = 0,
+        forms = const [],
+        id = 0;
 
   @override
   List<Object?> get props => [
