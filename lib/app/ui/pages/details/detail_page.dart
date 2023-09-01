@@ -27,8 +27,8 @@ class _DetailPageState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    final pokemonId = ModalRoute.of(context)!.settings.arguments as String;
-    widget.presenter.loadDetail(pokemonId: pokemonId);
+    // final pokemonId = ModalRoute.of(context)!.settings.arguments as String;
+    widget.presenter.loadDetail(pokemonId: '1');
     return ValueListenableBuilder<DetailEntity>(
         valueListenable: widget.presenter.detail,
         builder: (_, detail, __) {

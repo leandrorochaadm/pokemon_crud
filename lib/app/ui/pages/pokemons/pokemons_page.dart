@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon/app/core/factories/pages/pages.dart';
 import 'package:pokemon/app/domain/enties/pokemon_entity.dart';
 import 'package:pokemon/app/ui/pages/pokemons/pokemons_presenter.dart';
+
+import '../../core/transition/scale_route.dart';
 
 class PokemonsPage extends StatefulWidget {
   final PokemonsPresenter presenter;
@@ -53,10 +56,9 @@ class _PokemonsPageState extends State<PokemonsPage> {
                     style: const TextStyle(color: Colors.black),
                   ),
                   trailing: const Icon(Icons.arrow_forward_ios_sharp),
-                  onTap: () => Navigator.pushNamed(
+                  onTap: () => Navigator.push(
                     context,
-                    '/detail',
-                    arguments: pokemon.number,
+                    ScaleRoute(page: MakeDetailPage()),
                   ),
                 );
               },
