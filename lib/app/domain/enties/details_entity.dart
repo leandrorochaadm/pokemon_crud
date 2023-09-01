@@ -1,4 +1,6 @@
-class DetailsEntity {
+import 'package:equatable/equatable.dart';
+
+class DetailsEntity extends Equatable {
   List<String> abilities;
   int baseExperience;
   List<String> forms;
@@ -24,4 +26,19 @@ class DetailsEntity {
     required this.types,
     required this.weight,
   });
+
+  @override
+  List<Object?> get props => [
+        abilities,
+        baseExperience,
+        forms,
+        height,
+        id,
+        moves,
+        name,
+        order,
+        species,
+        types,
+        weight,
+      ];
 }
