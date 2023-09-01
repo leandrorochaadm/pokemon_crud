@@ -4,11 +4,11 @@ import '../../../domain/enties/enties.dart';
 import '../../../domain/usecases/usecases.dart';
 import '../../models/models.dart';
 
-class PokeapiGetDetails implements GetDetail {
+class PokeapiGetDetail implements GetDetail {
   final Dio dio;
   final String baseUrl;
 
-  PokeapiGetDetails({required this.dio, required this.baseUrl});
+  PokeapiGetDetail({required this.dio, required this.baseUrl});
 
   @override
   Future<DetailEntity> call() async {

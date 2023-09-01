@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon/app/ui/pages/details/detail_presenter.dart';
 
-class DetailsPage extends StatefulWidget {
+class DetailPage extends StatefulWidget {
   final DetailPresenter presenter;
-  const DetailsPage({Key? key, required this.presenter}) : super(key: key);
+  const DetailPage({Key? key, required this.presenter}) : super(key: key);
 
   @override
-  State<DetailsPage> createState() => _DetailsPageState();
+  State<DetailPage> createState() => _DetailPageState();
 }
 
-class _DetailsPageState extends State<DetailsPage> {
+class _DetailPageState extends State<DetailPage> {
   @override
   void initState() {
     widget.presenter.init();
