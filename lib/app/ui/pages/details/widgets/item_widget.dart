@@ -15,11 +15,11 @@ class ItemWidget extends StatelessWidget {
     return Row(
       children: [
         Text("$label:",
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-        const SizedBox(width: 12),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+        const SizedBox(width: 14),
         Text(
           description ?? '',
-          style: const TextStyle(fontSize: 16),
+          style: const TextStyle(fontSize: 22),
         ),
       ],
     );

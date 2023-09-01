@@ -41,6 +41,7 @@ class _DetailPageState extends State<DetailPage> {
             body: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ItemWidget(label: 'Name', description: detail.name),
                   const SizedBox(height: 8),
@@ -67,6 +68,19 @@ class _DetailPageState extends State<DetailPage> {
                     description: detail.order.toString(),
                   ),
                   const SizedBox(height: 8),
+                  const Text(
+                    'Habilidades:',
+                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: detail.abilities
+                        .map((ability) => Text(
+                              "* $ability",
+                              style: const TextStyle(fontSize: 22),
+                            ))
+                        .toList(),
+                  )
                 ],
               ),
             ),
