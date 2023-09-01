@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon/app/core/factories/pages/make_detail_page.dart';
 
 import 'core/factories/pages/make_pokemons_page.dart';
 
@@ -10,7 +11,11 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.blue),
-      home: MakePokemonsPage(),
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) => MakePokemonsPage(),
+        '/detail': (context) => MakeDetailPage(),
+      },
     );
   }
 }
